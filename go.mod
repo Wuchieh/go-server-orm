@@ -1,4 +1,4 @@
-module github.com/Wuchieh/go-server-gorm
+module github.com/Wuchieh/go-server-orm
 
 go 1.24.6
 

@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	orm "github.com/Wuchieh/go-server-gorm"
+	orm "github.com/Wuchieh/go-server-orm"
 	"gorm.io/gorm"
 )
 
@@ -72,12 +72,13 @@ func TestSetup(t *testing.T) {
 	}
 
 	tempName := time.Now().String()
-	db.Create(&user{
+	u := user{
 		Name: tempName,
-	})
+	}
+	db.Create(&u)
 
 	var record user
-	db.First(&record)
+	db.First(&record, u.ID)
 
 	if record.Name != tempName {
 		t.Fatalf("name not match")
