@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	orm "github.com/Wuchieh/go-server-gorm"
+	orm "github.com/Wuchieh/go-server-orm"
 	"gorm.io/gorm"
 )
 
