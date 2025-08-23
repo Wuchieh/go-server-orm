@@ -12,6 +12,9 @@ const (
 	DatabaseTypeSQLite   DatabaseType = "sqlite"
 	DatabaseTypePostgres DatabaseType = "postgres"
 	DatabaseTypeMysql    DatabaseType = "mysql"
+
+	MysqlDefaultPort    = 3306
+	PostgresDefaultPort = 5432
 )
 
 type Config struct {
@@ -51,4 +54,34 @@ func (d Config) GetDSN() (t DatabaseType, dsn string) {
 		}
 	}
 	return
+}
+
+func GetDefaultConfig(t DatabaseType) Config {
+	switch t {
+	case DatabaseTypePostgres:
+		return Config{
+			Type:     DatabaseTypePostgres,
+			Host:     "localhost",
+			Port:     PostgresDefaultPort,
+			User:     "user",
+			Password: "password",
+			Name:     "database",
+			SSLMode:  "disable",
+		}
+	case DatabaseTypeMysql:
+		return Config{
+			Type:     DatabaseTypeMysql,
+			Host:     "localhost",
+			Port:     MysqlDefaultPort,
+			User:     "user",
+			Password: "password",
+			Name:     "database",
+			SSLMode:  "disable",
+		}
+	default:
+		return Config{
+			Type: DatabaseTypeSQLite,
+			File: "database.db",
+		}
+	}
 }
