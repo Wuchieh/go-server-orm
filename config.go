@@ -21,7 +21,7 @@ type Config struct {
 	User        string       `mapstructure:"user"`
 	Password    string       `mapstructure:"password"`
 	Name        string       `mapstructure:"name"`
-	File        string       `mapstructure:"File"`
+	File        string       `mapstructure:"file"`
 	TablePrefix string       `mapstructure:"table_prefix"`
 	SSLMode     string       `mapstructure:"ssl_mode"`
 	DSN         string       `mapstructure:"dsn"`
