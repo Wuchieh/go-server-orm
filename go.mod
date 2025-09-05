@@ -1,12 +1,12 @@
 module github.com/Wuchieh/go-server-orm
 
-go 1.24.6
+go 1.25.1
 
 require (
 	gorm.io/driver/mysql v1.6.0
 	gorm.io/driver/postgres v1.6.0
 	gorm.io/driver/sqlite v1.6.0
-	gorm.io/gorm v1.30.1
+	gorm.io/gorm v1.30.3
 )
 
 require (
